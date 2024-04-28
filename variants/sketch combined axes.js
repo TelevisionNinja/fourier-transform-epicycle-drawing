@@ -128,7 +128,7 @@ function draw() {
         // only draw 1 cycle
         if (time <= Math.PI * 2) {
             // account for floating point precision
-            const epsilon = Math.pow(10, -8);
+            const epsilon = Math.pow(10, -7);
 
             if (equal(dt * transform.length, time, epsilon)) {
                 // dont add in the starting point at the end of the cycle to prevent closing the loop
