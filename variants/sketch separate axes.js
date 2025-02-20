@@ -13,7 +13,7 @@ function discreteFourierTransform(wave) {
     const N = wave.length;
     let frequencies = [];
 
-    const constant = 2 * Math.PI / N;
+    const constant = -2 * Math.PI / N;
 
     for (let k = 0; k < N; k++) {
         const currentConstantK = constant * k;
@@ -21,7 +21,7 @@ function discreteFourierTransform(wave) {
 
         for (let n = 0; n < N; n++) {
             const currentConstantn = currentConstantK * n;
-            const value = new ComplexNumber(Math.cos(currentConstantn), -Math.sin(currentConstantn));
+            const value = new ComplexNumber(Math.cos(currentConstantn), Math.sin(currentConstantn));
             sum = sum.add(wave[n].multiply(value));
         }
 
